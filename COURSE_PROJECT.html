@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        html {
+    scroll-behavior: smooth;
+}
+
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-ZZZserif;
+    background-color: #9edae8; /* Soft Peach */
+    margin: 0;
+    padding: 0;
+    color: #617E96; /* Slate Blue */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navigation Bar */
+nav {
+    background: linear-gradient(90deg, #617E96, #074f56);
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: navFadeIn 1s ease-in-out;
+}
+
+nav a {
+    color: #FFFFFF; /* White */
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+nav a:hover {
+    color: #A0CDCA; /* Cool Aquamarine */
+    transform: scale(1.1);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #A0CDCA; /* Cool Aquamarine */
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Navigation Animation */
+@keyframes navFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #03474d, #275e76, #5a918d);
+    text-align: center;
+    padding: 80px 20px;
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    animation: headerFadeIn 1.2s ease-in-out ;
+}
+
+header h1 {
+    font-size: 4.5rem;
+    margin: 0;
+    font-weight: 900;
+    background: linear-gradient(to right, #F7D1A4, #FFFFFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShimmer 3s infinite alternate;
+}
+
+header p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    animation: subheaderFadeIn 1.5s ease-in-out;
+}
+
+/* Header Animations */
+@keyframes headerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textShimmer {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
+
+@keyframes subheaderFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: mainFadeIn 1.5s ease-in-out;
+}
+
+main h1, main h2 {
+    color: #A0CDCA;
+    margin-bottom: 10px;
+}
+
+main h3 {
+    color: #617E96;
+    line-height: 1.6;
+}
+
+.content-box {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-left: 5px solid #D9B29F;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+h4 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+strong {
+    font-weight: bold;
+    color: #A0CDCA;
+}
+
+/* Footer */
+footer {
+    background-color: #006D77;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+    animation: footerFadeIn 1s ease-in-out;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Footer Animation */
+@keyframes footerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Link Styling */
+a {
+    color: #A0CDCA;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #617E96;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    header {
+        font-size: 2.5rem;
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+}
+
+    </style>
+<body>
+    <nav>
+        <a href="COURSE_PROJECT.html"></a>
+        <a href="CP_1.html">WORKING</a>
+        <a href="CP_2.html">ALGORITHM</a>
+        <!--<a href="daa_lab2_1.html">REFLECTIONS</a>
+        <a href="daa_2_3.html">CHALLENGES IN LEARNING</a>
+        <a href="daa_lab_2_4.html">CHALLENGES IN CORELATING CONCEPTS</a>
+        <a href="daa_lab_2_5.html">MOST EFFICIENT APPROACH</a><!-->
+
+        
+</nav>
+    <header>
+        <h1>Smart Indoor Parking System</h1>
+    </header>
+
+    <main>
+        <section>
+           <h3> FUNCTIONALITY:</h3>
+           <p> The module discusses the priority  to find and provide the nearest parking lot to the entrance for the user.
+            This ensures that the driver doesn’t waste their time searching the vacant parking and he also can obtain the nearest 
+            parking to the entrance with the help of the system. <p>
+            <h3>ALGORITHM USED:</h3>  
+            <P>Dijkstra Algorithm</P>        
+        </section>
+
+        <section>
+            <h2> The  procedure</h2>
+ <div>
+   <ul>
+     <li>As the car enters the parking area a unique number is assigned to the car.</li>
+     <li>An array named parkingLots stores the parking slot numbers which are not yet occupied.</li>
+     <li>Using Dijkstra Algorithm we find the nearest parking slot available to that particular car. </li>
+     <li> The car is assigned with a parking slot such that it is near to parking enterance as well inorder to avoid the conjestion. </li>
+     <li>Once a parking slot is allocated to a car it is marked as seen/occupied until the car in that slot exists the parking area.</li>
+     <li>design principles applicable : Edge Relaxation.</li>
+     <li>design technique: greedy algorithm.</li>
+     <li>Time complexity: Since priority queue is used,the time complexity is O(V+E)logV)</li>
+      <li> data structure used: Priority Queue.</li>
+
+         </ul>
+  </div>
+
+
+        </section>
+    </main>
+<body>
+    <footer>
+        <p>references</p>
+    </footer>
+
+</body>
+</html>

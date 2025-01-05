@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        html {
+    scroll-behavior: smooth;
+}
+
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-ZZZserif;
+    background-color: #9edae8; /* Soft Peach */
+    margin: 0;
+    padding: 0;
+    color: #617E96; /* Slate Blue */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navigation Bar */
+nav {
+    background: linear-gradient(90deg, #617E96, #006D77);
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: navFadeIn 1s ease-in-out;
+}
+
+nav a {
+    color: #FFFFFF; /* White */
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+nav a:hover {
+    color: #A0CDCA; /* Cool Aquamarine */
+    transform: scale(1.1);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #A0CDCA; /* Cool Aquamarine */
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Navigation Animation */
+@keyframes navFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header */
+header {
+    background: linear-gradient(35deg, #03474d, #275e76, #5a918d);
+    text-align: center;
+    padding: 80px 20px;
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    animation: headerFadeIn 1.2s ease-in-out ;
+}
+
+header h1 {
+    font-size: 4.5rem;
+    margin: 0;
+    font-weight: 900;
+    background: linear-gradient(to right, #F7D1A4, #FFFFFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShimmer 3s infinite alternate;
+}
+
+header p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    animation: subheaderFadeIn 1.5s ease-in-out;
+}
+
+/* Header Animations */
+@keyframes headerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textShimmer {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
+
+@keyframes subheaderFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: mainFadeIn 1.5s ease-in-out;
+}
+
+main h1, main h2 {
+    color: #A0CDCA;
+    margin-bottom: 10px;
+}
+
+main h3 {
+    color: #617E96;
+    line-height: 1.6;
+}
+
+.content-box {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-left: 5px solid #68afe2;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+h4 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+strong {
+    font-weight: bold;
+    color: #A0CDCA;
+}
+
+/* Footer */
+footer {
+    background-color: #006D77;
+    color: #93dcf2;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+    animation: footerFadeIn 1s ease-in-out;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Footer Animation */
+@keyframes footerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Link Styling */
+a {
+    color: #A0CDCA;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #617E96;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    header {
+        font-size: 2.5rem;
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+}
+
+    </style>
+<body>
+<body>
+    <div class="header">
+        <header>
+            <h1><b><strong>     
+                <h2>Course Learning Reflections</h2>
+            </strong></b></h1>
+        </header>
+       
+    </div>
+
+   
+        <div class="content-box">
+            <h2>1. Iteration, Recursion, Backtracking</h2>
+            <h3>- Iteration: It is the process of executing the same task again and again.</h3>
+            <h3>-- Examples in nature could be boarding people in airplanes, the placement of Matryoshka dolls.</h3>
+            <h3>- Recursion: It is the process of accomplishing the problem based on the results of the same problem at smaller instances.</h3>
+            <h3>-- Examples can be the growth of a plant every day, the process of learning.</h3>
+            <h3>- Backtracking: It is a way of exploring the possible paths and returning back if a path fails to search for a new path.</h3>
+            <h3>-- Examples are N-Queens problem, Sudoku.</h3>
+        </div>
+
+        <div class="content-box">
+            <h2>2. Space and Time Efficiency & Orders of Growth</h2>
+            <h3>- Space Efficiency: It is the extra space taken by the algorithm.</h3>
+            <h3>- Time Efficiency: It is the time taken by the algorithm.</h3>
+            <h3>- Orders of Growth: It determines how the time increases as we increase the inputs. It can be Constant, Logarithmic, Linear, Quadratic, Cubic.</h3>
+        </div>
+
+        <div class="content-box">
+            <h2>3. Design Principles</h2>
+            <h3>- Various design principles give an idea that even if every design principle has been developed with the intention of optimizing the problem, using it appropriately for a particular problem is very necessary.</h3>
+            <h3>-- For example, 'Pruning' is very well suited for the N-Queens problem, and using 'Parental dominance' makes no sense.</h3>
+            <h3>-- 'Bit manipulation' was used in Fenwick trees, whereas 'Edge relaxation' was used in spanning trees. Interchanging these principles only complicates the problems.</h3>
+        </div>
+
+        <div class="content-box">
+            <h2>4. Tree Data Structures</h2>
+            <h3>- Trees are used for hierarchical data management.</h3>
+            <h3>-- Trees such as AVL, Red-Black, 2-3 can be used if balance is needed, which can be achieved by rotations and if searching needs to be quicker.</h3>
+            <h3>-- Trie is used to manage character data.</h3>
+            <h3>-- Heap must satisfy tree shape requirement and parental dominance.</h3>
+        </div>
+
+        <div class="content-box">
+            <h2>5. Array Query Algorithms</h2>
+            <h3>- These are used when the data set is small and static.</h3>
+            <h3>-- It could be used to find sum, minimum, maximum over a given array set.</h3>
+            <h3>-- It uses the principle of 'Pre-computing,' wherein the previous result is stored and need not be calculated again, if needed.</h3>
+        </div>
+
+        <div class="content-box">
+            <h2>6. Trees and Graphs</h2>
+            <h3>- Trees are used to store hierarchical data and have no cycles (acyclic graph).</h3>
+            <h3>-- Graphs are ones with edges and nodes and can even form a cycle. They need not be hierarchical.</h3>
+            <h3>-- Trees are traversed through preorder, inorder, postorder traversal with one root node followed by left and right subtrees.</h3>
+        </div>
+
+        <div class="content-box">
+            <h2>7. Sorting and Searching</h2>
+            <h3>- Bubble sort was the most basic sort developed where an array is sorted with the reference of a minimum and comparing with every adjacent data.</h3>
+            <h3>-- Selection sort is better than bubble but not for large datasets as it goes over the whole list.</h3>
+            <h3>-- Insertion sort is used for partially sorted data as it takes fewer comparisons.</h3>
+            <h3>--Merge Sort: A stable, divide-and-conquer algorithm with O(n log n) time complexity.</h3>
+            <h3>--Quick Sort: An efficient, comparison-based sort with average O(n log n) time complexity.</h3>
+            <h3>--Heap Sort: Builds a heap and sorts in-place with O(n log n) time complexity.</h3>
+        </div>
+
+        <div class="content-box">
+            <h2>8. Spanning Trees and Shortest Path</h2>
+            <h3>- Spanning trees use various algorithms to find the shortest path between source and destination.</h3>
+            <h3>-- Kruskal finds the shortest path by visiting every node.</h3>
+            <h3>-- Dijkstra uses cost matrix to find the shortest path but does not necessarily visit every node.</h3>
+            <h3>--Bellman-Ford Algorithm: Can handle graphs with negative edge weights and detect negative weight cycles.</h3>
+            <h3>--Floyd-Warshall Algorithm: Computes the shortest paths between all pairs of nodes in a graph.</h3>
+        </div>
+
+        <div class="content-box">
+            <h2>9. Algorithm Design Techniques Studied</h2>
+            <h3>- Brute force: Try all possible solutions for a given problem.</h3>
+            <h3>-- Examples: Selection sort and Bubble sort.</h3>
+            <h3>- Decrease and Conquer: Split the problem into smaller subproblems, solve, and then use this to solve a bigger problem.</h3>
+            <h3>-- Examples: Insertion sort, DFS, BFS.</h3>
+            <h3>- Divide and Conquer: Split the problem into smaller subproblems, solve, and then merge the solutions.</h3>
+            <h3>-- Examples: Merge Sort, Quick Sort, Binary Search.</h3>
+            <h3>- Dynamic Programming: It is a method for solving a complex problem by breaking it down into simpler sub-problems, solving each once, and then using this every time the same problem occurs.</h3>
+            <h3>-- Examples: Warshall’s Algorithm, Floyd’s Algorithm, Bellman-Ford Algorithm.</h3>
+            <h3>- Greedy Technique: Make locally optimal choices at each step.</h3>
+            <h3>-- Examples: Prim’s and Kruskal’s Algorithms.</h3>
+            <h3>- Backtracking: Explore all possible solutions and reject the paths that fail.</h3>
+            <h3>-- Examples: Sudoku, N-Queens Problem.</h3>
+        </div>
+    </div>
+
+    
+</body>
+</html>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
